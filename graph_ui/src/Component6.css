@@ -1,0 +1,20 @@
+.upload {
+    background-color: rgb(184, 215, 255);
+    width: 280px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.upload2 {
+    background-color: rgb(255, 224, 184);
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+

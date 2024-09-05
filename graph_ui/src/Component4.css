@@ -1,0 +1,19 @@
+.toggle {
+    display: flex;
+    background-color: yellowgreen;
+    width: 350px;
+    height: 360px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.button-background {
+    display: flex;
+    border-radius: 15px;
+}
+
+.button-background button {
+    border-radius: 15px;
+}

@@ -1,0 +1,28 @@
+.Component2 {
+    text-align: left;
+    padding: 10px;
+    border-radius: 15px;
+    margin: 15px;
+    
+}
+
+.boldtext {
+    font-weight: bold;
+  }
+
+.list-background {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+.list-background p {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(228, 226, 226, 0.9); 
+    border-radius: 15px;
+  }
+
