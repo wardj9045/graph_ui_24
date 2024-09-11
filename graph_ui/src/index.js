@@ -20,7 +20,8 @@ class Component1 extends React.Component {
       count: 0,
       texts: ["Build a UI Graph Library to Visualize Data Relations",
               "Visualize Data Relations Through a UI Graph Library"
-      ]
+      ], 
+      jsonData: null
     };
   }
   add = () => {
@@ -160,6 +161,39 @@ class Component4 extends React.Component {
       }
     };
   
+    isObject = (value) => {
+      return typeof(value) == 'object';
+    }
+
+    prettyPrint = (jsonData, indent=0) => {
+      let result = {};
+      
+      for(var key in jsonData) {
+        let value = jsonData[key];
+        let modifiedKey = indent + " " + key;
+
+        if (this.isObject(value)) {
+
+          if(!value?.length) {
+            value = this.prettyPrint(value, indent+1)
+          } else {
+            let newValue = []
+            for(var key2 in value) {
+              let value2 = value[key2];
+              value2 = this.isObject(value2) ? this.prettyPrint(value2, indent+1) : value2;
+              newValue.push(value2);
+            }
+
+            value = newValue;
+          }
+        }
+
+        result[modifiedKey] = value;
+      }
+
+      return result;
+    }
+
     render() {
       const { jsonData } = this.state;
   
@@ -171,7 +205,7 @@ class Component4 extends React.Component {
             className="upload"
           />
           {jsonData && (
-              <pre>{JSON.stringify(jsonData, null, 2)}</pre>
+              <pre>{JSON.stringify(this.prettyPrint(jsonData), null, 2)}</pre>
 
             
           )}
